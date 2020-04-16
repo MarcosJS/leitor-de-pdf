@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Leitor de PDF: Texto extraido</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <!-- <p th:utext="${documento.getTextoPdf()}" /> -->
+    <h1 th:text="${documento.getMd5()}"></h1>
+    <h1 th:text="${documento.getNomeDocumento()}"></h1>
+    <br>
+    <br>
+    
+    <table>
+		<tr th:each="linhaTexto : ${documento.getTextoPdfPorLinhas()}"><td th:text="${linhaTexto}"/></tr>
+	</table>
+</body>
+</html>
